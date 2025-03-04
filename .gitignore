@@ -1,0 +1,16 @@
+__pycache__
+_unsloth*
+unsloth_compiled_cache/
+
+
+data/
+outputs/
+posttrained/
+sloth_utils/
+
+
+castle_modeling.ipynb
+run_custom_agent.ipynb
+smol_testing.ipynb
+testing.ipynb
+tools.py
