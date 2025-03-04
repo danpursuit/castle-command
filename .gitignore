@@ -14,3 +14,5 @@ run_custom_agent.ipynb
 smol_testing.ipynb
 testing.ipynb
 tools.py
+
+.DS_Store
