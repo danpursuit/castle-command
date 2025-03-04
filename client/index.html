@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Castle Commander</title>
+    <script src="https://cdn.jsdelivr.net/npm/phaser@3.55.2/dist/phaser.min.js"></script>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #333;
+      }
+      #game-container {
+        position: relative;
+      }
+      #hud {
+        background-color: #2c3e50;
+        color: white;
+        padding: 10px;
+        border-radius: 0 0 5px 5px;
+      }
+      .hud-row {
+        margin-bottom: 10px;
+        display: flex;
+        align-items: center;
+      }
+      .hud-label {
+        width: 120px;
+        font-weight: bold;
+      }
+      .checkbox-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+      button {
+        background-color: #27ae60;
+        color: white;
+        border: none;
+        padding: 8px 15px;
+        border-radius: 4px;
+        cursor: pointer;
+        font-weight: bold;
+      }
+      button:hover {
+        background-color: #2ecc71;
+      }
+      select,
+      input {
+        padding: 5px;
+        border-radius: 4px;
+        border: 1px solid #7f8c8d;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="game-container">
+      <div id="game"></div>
+      <div id="text-command">
+        <input type="text" id="command-input" placeholder="Enter command..." />
+        <button id="submit-command">Submit</button>
+        <button id="record-btn">Record</button>
+        <span id="command-status"></span>
+      </div>
+      <div id="hud">
+        <div class="hud-row">
+          <div class="hud-label">Function:</div>
+          <select id="function-select">
+            <option value="moveDirection">MoveDirection</option>
+            <option value="moveTarget">MoveTarget</option>
+          </select>
+        </div>
+        <div class="hud-row">
+          <div class="hud-label">Units:</div>
+          <div id="unit-checkboxes" class="checkbox-container"></div>
+        </div>
+        <div id="direction-params" class="hud-row">
+          <div class="hud-label">Direction:</div>
+          <label
+            >X: <input type="number" id="x-delta" value="0" min="-11" max="11"
+          /></label>
+          <label
+            >Y: <input type="number" id="y-delta" value="0" min="-4" max="4"
+          /></label>
+        </div>
+        <div id="target-params" class="hud-row" style="display: none">
+          <div class="hud-label">Target:</div>
+          <select id="target-select"></select>
+        </div>
+        <div class="hud-row">
+          <button id="go-button">Go!</button>
+        </div>
+      </div>
+    </div>
+    <script src="game.js"></script>
+  </body>
+</html>
